@@ -1,0 +1,74 @@
+﻿@model IEnumerable<webapp.Models.Tokhai>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="page-header">
+    <div class="container">
+        <div class="page-title">
+            <h2>Lịch sử Khai Báo</h2>
+            <ul class="breadcrumb lab-ul">
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="row">
+        
+        <table class="table thead-dark">
+            <thead class="thead-primary" style="color:blue">
+                <tr>
+                    <th>
+                        Nơi Đi
+                    </th>
+                    <th>
+                        Triệu Chứng
+                    </th>
+                    <th>
+                        Tiếp Xúc Người Bệnh
+                    </th>
+                    <th>
+                        Tùng qua nước có dịch
+                    </th>
+                    <th>
+                        Biểu hiện bản thân
+                    </th>
+                    <th>
+                        Tùy Chọn
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+        @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Dinhungdau)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Trieuchung)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Txnguoibenh)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Txnguoinuocbenh)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nguoicobieuhien)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" class="btn btn-dark" asp-route-id="@item.Matokhai">Edit</a> |
+                        <a asp-action="Details" class="btn btn-primary" asp-route-id="@item.Matokhai">Details</a> |
+                    </td>
+                </tr>
+        }
+            </tbody>
+        </table>
+    </div>
+</div>
+

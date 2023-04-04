@@ -1,0 +1,317 @@
+﻿@using Microsoft.AspNetCore.Http;
+@using webapp.Models;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="~/assets/images/x-icon/01.png">
+
+    <link rel="stylesheet" href="~/assets/css/animate.css">
+    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/assets/css/icofont.min.css">
+    <link rel="stylesheet" href="~/assets/css/lightcase.css">
+    <link rel="stylesheet" href="~/assets/css/swiper.min.css">
+    <link rel="stylesheet" href="~/assets/css/style.css">
+
+    <title>Covid-19</title>
+</head>
+
+<body>
+
+    <!-- Mobile Menu Start Here -->
+    <div class="mobile-menu">
+        <nav class="mobile-header">
+            <div class="header-logo">
+                <a href="index.html"><img src="~/assets/images/logo/01.png" alt="logo"></a>
+            </div>
+            <div class="header-bar">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <nav class="mobile-menu">
+            <div class="mobile-menu-area">
+                <div class="mobile-menu-area-inner">
+                    <ul class="lab-ul">
+                        <li class="active">
+                        <li><a href="/">Trang Chủ</a></li>
+                        @*<ul class="lab-ul">
+                                <li><a href="index.html">Home Style One</a></li>
+                                <li><a href="index-2.html">Home Style Two</a></li>
+                                <li class="active"><a href="index-3.html">Home Style Three</a></li>
+                                <li><a href="index-4.html">Home Style Four <sup>New</sup></a></li>
+                                <li><a href="index-5.html">Home Style Five <sup>New</sup></a></li>
+                                <li><a href="index-6.html">Home Style Six <sup>New</sup></a></li>
+                                <li><a href="index-7.html">Home Style Seven <sup>New</sup></a></li>
+                                <li><a href="one-page.html">One Page</a></li>
+                                <li><a href="index-box.html">Box Layout</a></li>
+                                <li><a href="http://demos.codexcoder.com/labartisan/html/covid-19-rtl/index.html">Rtl Layout</a></li>
+                            </ul>*@
+                        </li>
+                        @*<li>
+                                <a href="#">Pages</a>
+                                <ul class="lab-ul">
+                                    <li>
+                                        <a href="#0">About Page</a>
+                                        <ul class="lab-ul">
+                                            <li><a href="about.html">About Style 1</a></li>
+                                            <li><a href="about-2.html">About Style 2</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="faq.html">Faq</a></li>
+                                    <li><a href="outbreak.html">Outbreak</a></li>
+                                    <li><a href="coming-soon.html">ComingSoon</a></li>
+                                    <li><a href="404.html">404 Page</a></li>
+                                </ul>
+                            </li>*@
+                        <li><a href="/Prevention">Phòng Ngừa</a></li>
+                        <li>
+                            <a href="#">Blog</a>
+                            <ul class="lab-ul">
+                                <li>@Html.ActionLink("Blog", "index", "Blog")</li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/Product">Cửa Hàng</a>
+                            <ul class="lab-ul">
+                                <li>@Html.ActionLink("Sản phẩm", "index", "product")</li>
+                                <li>@Html.ActionLink("Product single", "Details", "product")</li>
+                                <li>@Html.ActionLink("Giỏ Hàng", "GioHang", "GioHang")</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/contact">Liên hệ</a></li>
+                        <li>@Html.ActionLink("Góp ý", "index", "contact")</li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- Mobile Menu Ending Here -->
+    <!-- desktop menu start here -->
+    <header class="header-section transparent-header">
+        <div class="header-area">
+            <div class="container">
+                <div class="primary-menu">
+                    <div class="logo">
+                        <a href="index.html"><img src="~/assets/images/logo/03.png" alt="logo"></a>
+                    </div>
+                    <div class="main-area">
+                        <div class="main-menu">
+                            <ul class="lab-ul">
+                                <li class="active">
+                                <li><a href="/">Trang Chủ</a></li>
+                                <!--<li class="active"><a href="index-3.html">Home Style Three</a></li>-->
+                                @*<ul class="lab-ul">
+                                        <li><a href="index.html">Home Style One</a></li>
+                                        <li><a href="index-2.html">Home Style Two</a></li>
+                                        <li class="active"><a href="index-3.html">Home Style Three</a></li>
+                                        <li><a href="index-4.html">Home Style Four <sup>New</sup></a></li>
+                                        <li><a href="index-5.html">Home Style Five <sup>New</sup></a></li>
+                                        <li><a href="index-6.html">Home Style Six <sup>New</sup></a></li>
+                                        <li><a href="index-7.html">Home Style Seven <sup>New</sup></a></li>
+                                        <li><a href="one-page.html">One Page</a></li>
+                                        <li><a href="index-box.html">Box Layout</a></li>
+                                        <li><a href="http://demos.codexcoder.com/labartisan/html/covid-19-rtl/index.html">Rtl Layout</a></li>
+                                    </ul>*@
+                                <!--</li>-->
+                                <li>
+                                    @*<a href="#">Pages</a>
+                                        <ul class="lab-ul">
+                                            <li>
+                                                <a href="#0">About Page</a>
+                                                <ul class="lab-ul">
+                                                    <li><a href="about.html">About Style 1</a></li>
+                                                    <li><a href="about-2.html">About Style 2</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="faq.html">Faq</a></li>
+                                            <li><a href="outbreak.html">Outbreak</a></li>
+                                            <li><a href="coming-soon.html">ComingSoon</a></li>
+                                            <li><a href="404.html">404 Page</a></li>
+                                        </ul>*@
+                                </li>
+                                <li><a href="/Prevention">Phòng Ngừa</a></li>
+                                <li>
+                                    <a href="/Blog">Blog</a>
+                                    <!--<ul class="lab-ul">-->
+                                    @*<li>@Html.ActionLink("Blog", "index", "Blog")</li>*@
+
+                                    <!--</ul>-->
+                                </li>
+                                <li>
+                                    <a href="/Product">Cửa Hàng</a>
+                                    @*<ul class="lab-ul">
+                                            <li>@Html.ActionLink("Product page", "index", "product")</li>
+                                            <li>@Html.ActionLink("Product single", "Details", "product")</li>
+                                            <li>@Html.ActionLink("Product cart", "Pagecarts", "product")</a></li>
+                                        </ul>*@
+                                </li>
+
+                                <li>@Html.ActionLink("Liên Hệ", "index", "contact")</li>
+                                <li>@Html.ActionLink("Góp Ý", "feedback", "contact")</li>
+                                @*<li>@Html.ActionLink("Gop Y", "index", "contact")</li>*@
+                                <li><a href="/giohang/giohang"><i class="icofont-cart-alt"></i>@await Html.PartialAsync("CartPartial")</a></li>
+
+                            </ul>
+                        </div>
+                        <!--<div class="header-btn">
+
+                            <a href="/tokhai" class="lab-btn style-2"><span>Bạn bị bệnh?</span></a>-->
+                        @*@Html.ActionLink("Khai Bao", "index", "tokhai")*@
+                        <!--</div>-->
+                        <div class="header-btn">
+                            <a href="/nguoidung/dangnhap" class="lab-btn style-2"><span id="login" runat="server">Đăng Nhập</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- desktop menu ending here -->
+
+    @RenderBody()
+
+    <!-- Footer Section Start Here -->
+    <footer style="background-image: url(/assets/css/bg-image/footer-bg-3.jpg);">
+        <div class="footer-top padding-tb">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <div class="footer-item first-set">
+                            <div class="footer-inner">
+                                <div class="footer-content">
+                                    <div class="title">
+                                        <h6>Giới thiệu về Covid-19</h6>
+                                    </div>
+                                    <div class="content">
+                                        <p>Chúng tôi tin tưởng vào Tiêu chuẩn thiết kế sáng tạo và linh hoạt đơn giản.</p>
+                                        <h6>Trụ sở chính:</h6>
+                                        <p>475A Điện Biên Phủ, phường 26, quận Bình Thạnh,TP.HCM</p>
+                                        <ul class="lab-ul">
+                                            <li>
+                                                <p><span>Phone:</span>(028) 123456789</p>
+                                            </li>
+                                            <li>
+                                                <p><span>Email:</span><a href="#">Daotao.hutech.edu.vn</a></p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <div class="footer-item">
+                            <div class="footer-inner">
+                                <div class="footer-content">
+                                    <div class="title">
+                                        <h6>Navigate</h6>
+                                    </div>
+                                    <div class="content">
+                                        <ul class="lab-ul">
+                                            <li><a href="#"><i class="icofont-caret-right"></i>Advertisers</a></li>
+                                            <li><a href="#"><i class="icofont-caret-right"></i>Developers</a></li>
+                                            <li><a href="#"><i class="icofont-caret-right"></i>Resources</a></li>
+                                            <li><a href="#"><i class="icofont-caret-right"></i>Company</a></li>
+                                            <li><a href="#"><i class="icofont-caret-right"></i>Connect</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <div class="footer-item">
+                            <div class="footer-inner">
+                                <div class="footer-content">
+                                    <div class="title">
+                                        <h6>Social Contact</h6>
+                                    </div>
+                                    <div class="content">
+                                        <ul class="lab-ul">
+                                            <li><a href="#"><i class="icofont-facebook"></i>Facebook</a></li>
+                                            <li><a href="#"><i class="icofont-twitter"></i>Twitter</a></li>
+                                            <li><a href="#"><i class="icofont-instagram"></i>Instagram</a></li>
+                                            <li><a href="#"><i class="icofont-youtube"></i>YouTube</a></li>
+                                            <li><a href="#"><i class="icofont-xing"></i>Xing</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <div class="footer-item">
+                            <div class="footer-inner">
+                                <div class="footer-content">
+                                    <div class="title">
+                                        <h6>Privacy And Tos</h6>
+                                    </div>
+                                    <div class="content">
+                                        <ul class="lab-ul">
+                                            <li><a href="#"><i class="icofont-caret-right"></i>Advertiser Agreement</a></li>
+                                            <li><a href="#"><i class="icofont-caret-right"></i>Acceptable Use Policy</a></li>
+                                            <li><a href="#"><i class="icofont-caret-right"></i>Privacy Policy</a></li>
+                                            <li><a href="#"><i class="icofont-caret-right"></i>Technology Privacy</a></li>
+                                            <li><a href="#"><i class="icofont-caret-right"></i>Developer Agreement</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="section-wrapper">
+                    <p>&copy; 2020 All Rights Reserved. Designed by <a href="https://themeforest.net/user/codexcoder">CodexCoder</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section Ending Here -->
+    <!-- scrollToTop start here -->
+    <a href="#" class="scrollToTop"><i class="icofont-swoosh-up"></i><span class="pluse_1"></span><span class="pluse_2"></span></a>
+    <!-- scrollToTop ending here -->
+
+
+    <script src="~/assets/js/jquery.js"></script>
+    <script src="~/assets/js/waypoints.min.js"></script>
+    <script src="~/assets/js/bootstrap.min.js"></script>
+    <script src="~/assets/js/lightcase.js"></script>
+    <script src="~/assets/js/isotope.pkgd.min.js"></script>
+    <script src="~/assets/js/swiper.min.js"></script>
+    <script src="~/assets/js/jquery.countdown.min.js"></script>
+    <script src="~/js/site.js"></script>
+    <script src="~/assets/js/wow.min.js"></script>
+    <script src="~/assets/js/functions.js"></script>
+    @*<script>
+        function Login() {
+            @{
+                Khachhang kh = SessionHelpers.GetObjFromJson<Khachhang>(Context.Session, "TaiKhoan");
+
+            }
+            if (@kh != null) {
+                document.getElementById("login").innerHTML = "Đăng xuất";
+                console.log("a");
+            }
+        }
+        window.onload = Login();
+    </script>*@
+    <script runat="server">
+            protected void Page_Load(object sender, EventArgs e)
+            {
+                login.InnerHtml = Server.HtmlEncode("Welcome! You accessed this page at: " + DateTime.Now);
+            }
+    </script>
+</body>
+</html>
